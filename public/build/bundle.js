@@ -309,6 +309,8 @@ var app = (function () {
     	let p;
     	let t1;
     	let h1;
+    	let t3;
+    	let img;
 
     	const block = {
     		c: function create() {
@@ -318,11 +320,15 @@ var app = (function () {
     			t1 = space();
     			h1 = element("h1");
     			h1.textContent = "hello";
-    			add_location(p, file, 5, 1, 46);
-    			attr_dev(h1, "class", "svelte-1tky8bj");
-    			add_location(h1, file, 6, 2, 75);
-    			attr_dev(main, "class", "svelte-1tky8bj");
-    			add_location(main, file, 4, 0, 38);
+    			t3 = space();
+    			img = element("img");
+    			add_location(p, file, 6, 1, 93);
+    			attr_dev(h1, "class", "svelte-186bmmj");
+    			add_location(h1, file, 7, 2, 122);
+    			attr_dev(img, "placeholderimg", /*placeholderImg*/ ctx[0]);
+    			add_location(img, file, 8, 2, 139);
+    			attr_dev(main, "class", "svelte-186bmmj");
+    			add_location(main, file, 5, 0, 85);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -332,6 +338,8 @@ var app = (function () {
     			append_dev(main, p);
     			append_dev(main, t1);
     			append_dev(main, h1);
+    			append_dev(main, t3);
+    			append_dev(main, img);
     		},
     		p: noop,
     		i: noop,
@@ -354,6 +362,7 @@ var app = (function () {
 
     function instance($$self, $$props, $$invalidate) {
     	let { name } = $$props;
+    	let placeholderImg = "imgs/placeholder.png";
     	const writable_props = ["name"];
 
     	Object.keys($$props).forEach(key => {
@@ -364,26 +373,27 @@ var app = (function () {
     	validate_slots("App", $$slots, []);
 
     	$$self.$$set = $$props => {
-    		if ("name" in $$props) $$invalidate(0, name = $$props.name);
+    		if ("name" in $$props) $$invalidate(1, name = $$props.name);
     	};
 
-    	$$self.$capture_state = () => ({ name });
+    	$$self.$capture_state = () => ({ name, placeholderImg });
 
     	$$self.$inject_state = $$props => {
-    		if ("name" in $$props) $$invalidate(0, name = $$props.name);
+    		if ("name" in $$props) $$invalidate(1, name = $$props.name);
+    		if ("placeholderImg" in $$props) $$invalidate(0, placeholderImg = $$props.placeholderImg);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name];
+    	return [placeholderImg, name];
     }
 
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { name: 0 });
+    		init(this, options, instance, create_fragment, safe_not_equal, { name: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -395,7 +405,7 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*name*/ ctx[0] === undefined && !("name" in props)) {
+    		if (/*name*/ ctx[1] === undefined && !("name" in props)) {
     			console.warn("<App> was created without expected prop 'name'");
     		}
     	}

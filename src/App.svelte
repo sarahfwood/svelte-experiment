@@ -1,13 +1,16 @@
 <script>
 	export let name;
+  let placeholderImg = 'imgs/placeholder.png';
 </script>
 
 <main>
 	<p>This is a paragraph</p>
   <h1>hello</h1>
+  <img {placeholderImg}>
 </main>
 
 <style>
+
 	main {
 		text-align: center;
 		padding: 1em;
