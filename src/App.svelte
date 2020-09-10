@@ -1,12 +1,12 @@
 <script>
 	export let name;
-  let placeholderImg = 'imgs/placeholder.png';
+  let placeholderImg = 'src/imgs/placeholder.png';
 </script>
 
 <main>
 	<p>This is a paragraph</p>
   <h1>hello</h1>
-  <img {placeholderImg}>
+  <img src={placeholderImg}>
 </main>
 
 <style>

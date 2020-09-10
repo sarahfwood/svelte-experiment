@@ -311,6 +311,7 @@ var app = (function () {
     	let h1;
     	let t3;
     	let img;
+    	let img_src_value;
 
     	const block = {
     		c: function create() {
@@ -322,13 +323,13 @@ var app = (function () {
     			h1.textContent = "hello";
     			t3 = space();
     			img = element("img");
-    			add_location(p, file, 6, 1, 93);
+    			add_location(p, file, 6, 1, 97);
     			attr_dev(h1, "class", "svelte-186bmmj");
-    			add_location(h1, file, 7, 2, 122);
-    			attr_dev(img, "placeholderimg", /*placeholderImg*/ ctx[0]);
-    			add_location(img, file, 8, 2, 139);
+    			add_location(h1, file, 7, 2, 126);
+    			if (img.src !== (img_src_value = /*placeholderImg*/ ctx[0])) attr_dev(img, "src", img_src_value);
+    			add_location(img, file, 8, 2, 143);
     			attr_dev(main, "class", "svelte-186bmmj");
-    			add_location(main, file, 5, 0, 85);
+    			add_location(main, file, 5, 0, 89);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -362,7 +363,7 @@ var app = (function () {
 
     function instance($$self, $$props, $$invalidate) {
     	let { name } = $$props;
-    	let placeholderImg = "imgs/placeholder.png";
+    	let placeholderImg = "src/imgs/placeholder.png";
     	const writable_props = ["name"];
 
     	Object.keys($$props).forEach(key => {
