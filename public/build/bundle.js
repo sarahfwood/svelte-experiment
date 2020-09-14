@@ -306,41 +306,51 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let main;
-    	let p;
+    	let p0;
     	let t1;
     	let h1;
     	let t3;
     	let img;
     	let img_src_value;
+    	let t4;
+    	let p1;
 
     	const block = {
     		c: function create() {
     			main = element("main");
-    			p = element("p");
-    			p.textContent = "This is a paragraph";
+    			p0 = element("p");
+    			p0.textContent = "This is a paragraph";
     			t1 = space();
     			h1 = element("h1");
     			h1.textContent = "hello";
     			t3 = space();
     			img = element("img");
-    			add_location(p, file, 6, 1, 97);
-    			attr_dev(h1, "class", "svelte-186bmmj");
-    			add_location(h1, file, 7, 2, 126);
+    			t4 = space();
+    			p1 = element("p");
+    			attr_dev(p0, "class", "svelte-716gke");
+    			add_location(p0, file, 7, 1, 153);
+    			attr_dev(h1, "class", "svelte-716gke");
+    			add_location(h1, file, 8, 2, 182);
     			if (img.src !== (img_src_value = /*placeholderImg*/ ctx[0])) attr_dev(img, "src", img_src_value);
-    			add_location(img, file, 8, 2, 143);
-    			attr_dev(main, "class", "svelte-186bmmj");
-    			add_location(main, file, 5, 0, 89);
+    			add_location(img, file, 9, 2, 199);
+    			attr_dev(p1, "class", "svelte-716gke");
+    			add_location(p1, file, 10, 2, 228);
+    			attr_dev(main, "class", "svelte-716gke");
+    			add_location(main, file, 6, 0, 145);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			append_dev(main, p);
+    			append_dev(main, p0);
     			append_dev(main, t1);
     			append_dev(main, h1);
     			append_dev(main, t3);
     			append_dev(main, img);
+    			append_dev(main, t4);
+    			append_dev(main, p1);
+    			p1.innerHTML = /*paragraphTest*/ ctx[1];
     		},
     		p: noop,
     		i: noop,
@@ -363,7 +373,8 @@ var app = (function () {
 
     function instance($$self, $$props, $$invalidate) {
     	let { name } = $$props;
-    	let placeholderImg = "src/imgs/placeholder.png";
+    	let placeholderImg = "public/imgs/placeholder.png";
+    	let paragraphTest = `Test paragraph "Hello World"`;
     	const writable_props = ["name"];
 
     	Object.keys($$props).forEach(key => {
@@ -374,27 +385,28 @@ var app = (function () {
     	validate_slots("App", $$slots, []);
 
     	$$self.$$set = $$props => {
-    		if ("name" in $$props) $$invalidate(1, name = $$props.name);
+    		if ("name" in $$props) $$invalidate(2, name = $$props.name);
     	};
 
-    	$$self.$capture_state = () => ({ name, placeholderImg });
+    	$$self.$capture_state = () => ({ name, placeholderImg, paragraphTest });
 
     	$$self.$inject_state = $$props => {
-    		if ("name" in $$props) $$invalidate(1, name = $$props.name);
+    		if ("name" in $$props) $$invalidate(2, name = $$props.name);
     		if ("placeholderImg" in $$props) $$invalidate(0, placeholderImg = $$props.placeholderImg);
+    		if ("paragraphTest" in $$props) $$invalidate(1, paragraphTest = $$props.paragraphTest);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [placeholderImg, name];
+    	return [placeholderImg, paragraphTest, name];
     }
 
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { name: 1 });
+    		init(this, options, instance, create_fragment, safe_not_equal, { name: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -406,7 +418,7 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*name*/ ctx[1] === undefined && !("name" in props)) {
+    		if (/*name*/ ctx[2] === undefined && !("name" in props)) {
     			console.warn("<App> was created without expected prop 'name'");
     		}
     	}

@@ -1,12 +1,14 @@
 <script>
 	export let name;
-  let placeholderImg = 'src/imgs/placeholder.png';
+  let placeholderImg = 'public/imgs/placeholder.png';
+  let paragraphTest = `Test paragraph "Hello World"`
 </script>
 
 <main>
 	<p>This is a paragraph</p>
   <h1>hello</h1>
   <img src={placeholderImg}>
+  <p>{@html paragraphTest}</p>
 </main>
 
 <style>
@@ -24,6 +26,11 @@
 		font-size: 4em;
 		font-weight: 100;
 	}
+
+  p {
+    color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
 
 	@media (min-width: 640px) {
 		main {
