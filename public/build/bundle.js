@@ -328,15 +328,15 @@ var app = (function () {
     			t4 = space();
     			p1 = element("p");
     			attr_dev(p0, "class", "svelte-716gke");
-    			add_location(p0, file, 7, 1, 153);
+    			add_location(p0, file, 7, 1, 137);
     			attr_dev(h1, "class", "svelte-716gke");
-    			add_location(h1, file, 8, 2, 182);
-    			if (img.src !== (img_src_value = /*placeholderImg*/ ctx[0])) attr_dev(img, "src", img_src_value);
-    			add_location(img, file, 9, 2, 199);
+    			add_location(h1, file, 8, 2, 166);
+    			if (img.src !== (img_src_value = /*src*/ ctx[0])) attr_dev(img, "src", img_src_value);
+    			add_location(img, file, 9, 2, 183);
     			attr_dev(p1, "class", "svelte-716gke");
-    			add_location(p1, file, 10, 2, 228);
+    			add_location(p1, file, 10, 2, 201);
     			attr_dev(main, "class", "svelte-716gke");
-    			add_location(main, file, 6, 0, 145);
+    			add_location(main, file, 6, 0, 129);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -373,7 +373,7 @@ var app = (function () {
 
     function instance($$self, $$props, $$invalidate) {
     	let { name } = $$props;
-    	let placeholderImg = "public/imgs/placeholder.png";
+    	let src = "public/placeholder.png";
     	let paragraphTest = `Test paragraph "Hello World"`;
     	const writable_props = ["name"];
 
@@ -388,11 +388,11 @@ var app = (function () {
     		if ("name" in $$props) $$invalidate(2, name = $$props.name);
     	};
 
-    	$$self.$capture_state = () => ({ name, placeholderImg, paragraphTest });
+    	$$self.$capture_state = () => ({ name, src, paragraphTest });
 
     	$$self.$inject_state = $$props => {
     		if ("name" in $$props) $$invalidate(2, name = $$props.name);
-    		if ("placeholderImg" in $$props) $$invalidate(0, placeholderImg = $$props.placeholderImg);
+    		if ("src" in $$props) $$invalidate(0, src = $$props.src);
     		if ("paragraphTest" in $$props) $$invalidate(1, paragraphTest = $$props.paragraphTest);
     	};
 
@@ -400,7 +400,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [placeholderImg, paragraphTest, name];
+    	return [src, paragraphTest, name];
     }
 
     class App extends SvelteComponentDev {
