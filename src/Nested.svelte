@@ -1,1 +1,1 @@
-<p>Test nested component</p>
+<p>Test nested component - ok now time to build something</p>

@@ -330,7 +330,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			p = element("p");
-    			p.textContent = "Test nested component";
+    			p.textContent = "Test nested component - ok now time to build something";
     			add_location(p, file, 0, 0, 0);
     		},
     		l: function claim(nodes) {
