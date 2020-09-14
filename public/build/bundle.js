@@ -331,10 +331,11 @@ var app = (function () {
     			add_location(p0, file, 7, 1, 137);
     			attr_dev(h1, "class", "svelte-716gke");
     			add_location(h1, file, 8, 2, 166);
-    			if (img.src !== (img_src_value = /*src*/ ctx[0])) attr_dev(img, "src", img_src_value);
+    			if (img.src !== (img_src_value = /*src*/ ctx[1])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "placeholder image");
     			add_location(img, file, 9, 2, 183);
     			attr_dev(p1, "class", "svelte-716gke");
-    			add_location(p1, file, 10, 2, 201);
+    			add_location(p1, file, 10, 2, 221);
     			attr_dev(main, "class", "svelte-716gke");
     			add_location(main, file, 6, 0, 129);
     		},
@@ -350,7 +351,7 @@ var app = (function () {
     			append_dev(main, img);
     			append_dev(main, t4);
     			append_dev(main, p1);
-    			p1.innerHTML = /*paragraphTest*/ ctx[1];
+    			p1.innerHTML = /*paragraphTest*/ ctx[0];
     		},
     		p: noop,
     		i: noop,
@@ -373,8 +374,8 @@ var app = (function () {
 
     function instance($$self, $$props, $$invalidate) {
     	let { name } = $$props;
-    	let src = "public/placeholder.png";
     	let paragraphTest = `Test paragraph "Hello World"`;
+    	let src = "images/placeholder.png";
     	const writable_props = ["name"];
 
     	Object.keys($$props).forEach(key => {
@@ -388,19 +389,19 @@ var app = (function () {
     		if ("name" in $$props) $$invalidate(2, name = $$props.name);
     	};
 
-    	$$self.$capture_state = () => ({ name, src, paragraphTest });
+    	$$self.$capture_state = () => ({ name, paragraphTest, src });
 
     	$$self.$inject_state = $$props => {
     		if ("name" in $$props) $$invalidate(2, name = $$props.name);
-    		if ("src" in $$props) $$invalidate(0, src = $$props.src);
-    		if ("paragraphTest" in $$props) $$invalidate(1, paragraphTest = $$props.paragraphTest);
+    		if ("paragraphTest" in $$props) $$invalidate(0, paragraphTest = $$props.paragraphTest);
+    		if ("src" in $$props) $$invalidate(1, src = $$props.src);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [src, paragraphTest, name];
+    	return [paragraphTest, src, name];
     }
 
     class App extends SvelteComponentDev {

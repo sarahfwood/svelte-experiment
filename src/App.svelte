@@ -1,13 +1,13 @@
 <script>
 	export let name;
-  let src = 'public/placeholder.png';
   let paragraphTest = `Test paragraph "Hello World"`
+  let src = "images/placeholder.png";
 </script>
 
 <main>
 	<p>This is a paragraph</p>
   <h1>hello</h1>
-  <img src {src} alt="placeholder image">
+  <img {src} alt="placeholder image">
   <p>{@html paragraphTest}</p>
 </main>
 
