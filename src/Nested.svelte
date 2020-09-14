@@ -1,0 +1,1 @@
+<p>Test nested component</p>

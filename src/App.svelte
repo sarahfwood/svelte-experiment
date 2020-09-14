@@ -1,4 +1,5 @@
 <script>
+  import Nested from './Nested.svelte';
 	export let name;
   let paragraphTest = `Test paragraph "Hello World"`
   let src = "images/placeholder.png";
@@ -9,6 +10,7 @@
   <h1>hello</h1>
   <img {src} alt="placeholder image">
   <p>{@html paragraphTest}</p>
+  <Nested/>
 </main>
 
 <style>
