@@ -1,1 +1,4 @@
-<p>Test nested component - ok now time to build something</p>
+<script>
+let d = new Date();
+document.getElementById("date").innerHTML = d;
+</script>
