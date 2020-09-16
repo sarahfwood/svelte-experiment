@@ -593,11 +593,13 @@ var app = (function () {
     	let t0;
     	let t1;
     	let div1;
-    	let p;
+    	let p0;
     	let t3;
     	let button;
     	let t4;
     	let div0;
+    	let p1;
+    	let t6;
     	let img;
     	let img_src_value;
     	let current;
@@ -617,21 +619,26 @@ var app = (function () {
     			t0 = text(/*name*/ ctx[0]);
     			t1 = space();
     			div1 = element("div");
-    			p = element("p");
-    			p.textContent = "Night Mode";
+    			p0 = element("p");
+    			p0.textContent = "Night Mode";
     			t3 = space();
     			create_component(button.$$.fragment);
     			t4 = space();
     			div0 = element("div");
+    			p1 = element("p");
+    			p1.textContent = `${/*paragraphTest*/ ctx[1]}`;
+    			t6 = space();
     			img = element("img");
     			attr_dev(h1, "class", "svelte-1vifzbu");
     			add_location(h1, file$2, 9, 2, 218);
-    			attr_dev(p, "class", "svelte-1vifzbu");
-    			add_location(p, file$2, 11, 4, 246);
-    			if (img.src !== (img_src_value = /*src*/ ctx[1])) attr_dev(img, "src", img_src_value);
+    			attr_dev(p0, "class", "svelte-1vifzbu");
+    			add_location(p0, file$2, 11, 4, 246);
+    			attr_dev(p1, "class", "svelte-1vifzbu");
+    			add_location(p1, file$2, 16, 6, 320);
+    			if (img.src !== (img_src_value = /*src*/ ctx[2])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "placeholder image");
     			attr_dev(img, "class", "svelte-1vifzbu");
-    			add_location(img, file$2, 16, 6, 320);
+    			add_location(img, file$2, 17, 6, 349);
     			add_location(div0, file$2, 15, 4, 308);
     			add_location(div1, file$2, 10, 2, 236);
     			attr_dev(main, "class", "svelte-1vifzbu");
@@ -646,11 +653,13 @@ var app = (function () {
     			append_dev(h1, t0);
     			append_dev(main, t1);
     			append_dev(main, div1);
-    			append_dev(div1, p);
+    			append_dev(div1, p0);
     			append_dev(div1, t3);
     			mount_component(button, div1, null);
     			append_dev(div1, t4);
     			append_dev(div1, div0);
+    			append_dev(div0, p1);
+    			append_dev(div0, t6);
     			append_dev(div0, img);
     			current = true;
     		},
@@ -711,15 +720,15 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
-    		if ("paragraphTest" in $$props) paragraphTest = $$props.paragraphTest;
-    		if ("src" in $$props) $$invalidate(1, src = $$props.src);
+    		if ("paragraphTest" in $$props) $$invalidate(1, paragraphTest = $$props.paragraphTest);
+    		if ("src" in $$props) $$invalidate(2, src = $$props.src);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name, src];
+    	return [name, paragraphTest, src];
     }
 
     class App extends SvelteComponentDev {

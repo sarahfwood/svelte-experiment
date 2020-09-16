@@ -14,6 +14,7 @@
       Toggle
     </Button>
     <div>
+      <p>{paragraphTest}</p>
       <img {src} alt="placeholder image" />
     </div>
   </div>
