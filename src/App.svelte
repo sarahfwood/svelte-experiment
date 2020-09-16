@@ -18,7 +18,6 @@
       <img {src} alt="placeholder image" />
     </div>
   </div>
-  <p id="date"></p>
   <Nested/>
 </main>
 

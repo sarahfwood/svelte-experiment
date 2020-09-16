@@ -1,5 +1,5 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -641,8 +641,6 @@ var app = (function () {
     	let img;
     	let img_src_value;
     	let t7;
-    	let p2;
-    	let t8;
     	let nested;
     	let current;
 
@@ -674,8 +672,6 @@ var app = (function () {
     			t6 = space();
     			img = element("img");
     			t7 = space();
-    			p2 = element("p");
-    			t8 = space();
     			create_component(nested.$$.fragment);
     			attr_dev(h1, "class", "svelte-1vifzbu");
     			add_location(h1, file$2, 9, 2, 218);
@@ -689,9 +685,6 @@ var app = (function () {
     			add_location(img, file$2, 17, 6, 349);
     			add_location(div0, file$2, 15, 4, 308);
     			add_location(div1, file$2, 10, 2, 236);
-    			attr_dev(p2, "id", "date");
-    			attr_dev(p2, "class", "svelte-1vifzbu");
-    			add_location(p2, file$2, 20, 2, 409);
     			attr_dev(main, "class", "svelte-1vifzbu");
     			add_location(main, file$2, 8, 0, 209);
     		},
@@ -713,8 +706,6 @@ var app = (function () {
     			append_dev(div0, t6);
     			append_dev(div0, img);
     			append_dev(main, t7);
-    			append_dev(main, p2);
-    			append_dev(main, t8);
     			mount_component(nested, main, null);
     			current = true;
     		},
